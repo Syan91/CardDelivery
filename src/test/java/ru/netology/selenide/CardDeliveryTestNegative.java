@@ -214,5 +214,29 @@ public class CardDeliveryTestNegative {
         $(byText("Забронировать")).click();
         $(byText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.")).waitUntil(Condition.visible, 15000);
     }
+    @Test
+    void ShouldNotAssignDeliveryIfCityWrittenWithLowerCase() {
+        $("[data-test-id = city] input").sendKeys("ростов-на-дону");
+        $("[data-test-id = date] input").doubleClick().sendKeys(Keys.DELETE);
+        $("[data-test-id = date] input").sendKeys(date);
+        $("[data-test-id=name] input").sendKeys("ИВАНОВ ИВАН");
+        $("[data-test-id=phone] input").sendKeys("+79280000000");
+        $("[data-test-id=agreement]").click();
+        $(byText("Забронировать")).click();
+        $(byText("Доставка в выбранный город недоступна")).waitUntil(Condition.visible, 15000);
+
+    }
+    @Test
+    void ShouldNotAssignDeliveryIfCityWrittenWithUpperCase() {
+        $("[data-test-id = city] input").sendKeys("РОСТОВ-НА-ДОНУ");
+        $("[data-test-id = date] input").doubleClick().sendKeys(Keys.DELETE);
+        $("[data-test-id = date] input").sendKeys(date);
+        $("[data-test-id=name] input").sendKeys("ИВАНОВ ИВАН");
+        $("[data-test-id=phone] input").sendKeys("+79280000000");
+        $("[data-test-id=agreement]").click();
+        $(byText("Забронировать")).click();
+        $(byText("Доставка в выбранный город недоступна")).waitUntil(Condition.visible, 15000);
+
+    }
 }
 
