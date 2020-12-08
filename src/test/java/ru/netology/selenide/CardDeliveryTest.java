@@ -24,7 +24,7 @@ import static com.codeborne.selenide.Selenide.open;
      @Test
      void ShouldAssignDelivery(){
          $("[data-test-id = city] input").sendKeys("Москва");
-         $("[data-test-id = city] input").doubleClick().sendKeys(Keys.DELETE);
+         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.DELETE);
          $("[data-test-id = date] input").sendKeys(date);
          $("[data-test-id=name] input").sendKeys("Иванов Иван");
          $("[data-test-id=phone] input").sendKeys("+79280000000");
@@ -36,7 +36,7 @@ import static com.codeborne.selenide.Selenide.open;
      @Test
      void ShouldAssignDeliveryIfNameWithHyphen(){
          $("[data-test-id = city] input").sendKeys("Москва");
-         $("[data-test-id = city] input").doubleClick().sendKeys(Keys.DELETE);
+         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.DELETE);
          $("[data-test-id = date] input").sendKeys(date);
          $("[data-test-id=name] input").sendKeys("Иванов-Петров Иван");
          $("[data-test-id=phone] input").sendKeys("+79280000000");
@@ -48,7 +48,7 @@ import static com.codeborne.selenide.Selenide.open;
     @Test
     void ShouldAssignDeliveryIfCityWithHyphen(){
         $("[data-test-id = city] input").sendKeys("Ростов-на-Дону");
-        $("[data-test-id = city] input").doubleClick().sendKeys(Keys.DELETE);
+        $("[data-test-id = date] input").doubleClick().sendKeys(Keys.DELETE);
         $("[data-test-id = date] input").sendKeys(date);
         $("[data-test-id=name] input").sendKeys("Иванов Иван");
         $("[data-test-id=phone] input").sendKeys("+79280000000");
@@ -60,7 +60,7 @@ import static com.codeborne.selenide.Selenide.open;
      @Test
      void ShouldAssignDeliveryIfNameInUpperCase(){
          $("[data-test-id = city] input").sendKeys("Ростов-на-Дону");
-         $("[data-test-id = city] input").doubleClick().sendKeys(Keys.DELETE);
+         $("[data-test-id = date] input").doubleClick().sendKeys(Keys.DELETE);
          $("[data-test-id = date] input").sendKeys(date);
          $("[data-test-id=name] input").sendKeys("ИВАНОВ ИВАН");
          $("[data-test-id=phone] input").sendKeys("+79280000000");
